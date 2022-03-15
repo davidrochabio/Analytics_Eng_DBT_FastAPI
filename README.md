@@ -1,14 +1,14 @@
 # Web_scraping_PostgreSQL_API
 
-- Scrapes products data from brazilian PC webstore -> pichau.com.br
+#### Scrapes products data from brazilian PC webstore -> pichau.com.br
 
-- Generates orders data and inserts tables in a PostgreSQL db
+#### Generates orders data and inserts tables in a PostgreSQL db
 
-- Connects to PGAdmin GUI
+#### Connects to PGAdmin GUI
 
-- Create an API (FastAPI)
+#### Create an API (FastAPI)
 
-- ALL wrapped in a docker compose.
+#### ALL wrapped in a docker compose.
 
 -> Check/change docker-compose.yaml file for postgres credentials. the host name is the name of the postgres service insine the docker-compose file.
 
