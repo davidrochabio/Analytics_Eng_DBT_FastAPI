@@ -1,5 +1,9 @@
 # Web_scraping_PostgreSQL_API
 
+![API](screenshots/PostgreSQL_API1.jpg)
+
+![PGAdmin](screenshots/pgadmin_table.jpg)
+
 ### - Scrapes products data from brazilian PC webstore -> pichau.com.br
 
 ### - Generates orders data and inserts tables in a PostgreSQL db
