@@ -2,7 +2,7 @@
 
 ![API](screenshots/PostgreSQL_API1.jpg)
 
-![PGAdmin](screenshots/pgadmin_table.jpg)
+![PGAdmin](screenshots/pgadmin_products.jpg)
 
 ### - Scrapes products data from brazilian PC webstore -> pichau.com.br
 
