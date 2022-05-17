@@ -1,0 +1,69 @@
+version: '3.5'
+
+services:
+  postgres:
+    container_name: postgres_p1
+    image: postgres
+    restart: "no"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=pichau
+    ports:
+      - "5432:5432"
+    volumes:
+      - type: volume 
+        source: postgres_data
+        target: /var/lib/postgresql/postgres_data
+      - type: bind 
+        source: ./init_db/bash_init.sh
+        target: /docker-entrypoint-initdb.d/bash_init.sh
+    networks:
+      - pichaunet
+  
+  pgadmin:
+    container_name: pgadmin_p2
+    image: dpage/pgadmin4:6.6
+    restart: "no"
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=pgadmin@pgadmin.com
+      - PGADMIN_DEFAULT_PASSWORD=admin
+    ports:
+      - "5050:80"
+    networks:
+      - pichaunet
+
+  dbt:
+    container_name: dbt_p3
+    build:
+      context: .
+      dockerfile: Dockerfile.dbt
+    environment:
+      - VERSION='0.21.1'
+      - PLUGINS='postgres'
+    depends_on:
+      - postgres
+    command: bash -c "python pichau_scraping.py && cd /usr/app/pichau && dbt debug && dbt run"
+    networks:
+      - pichaunet
+  
+  fastapi:
+    container_name: fastapi_p4
+    build:
+      context: .
+      dockerfile: Dockerfile.fastapi
+    restart: "no"
+    depends_on:
+      - dbt
+    command: bash -c "python -m uvicorn main:app --host 0.0.0.0"
+    ports:
+      - "8000:8000"
+    networks:
+      - pichaunet
+
+networks:
+  pichaunet:
+    driver: bridge
+
+volumes:
+  postgres_data:
