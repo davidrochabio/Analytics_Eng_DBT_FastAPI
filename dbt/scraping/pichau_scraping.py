@@ -128,10 +128,7 @@ len_products = len(products)
 print(len_products)
 
 # %%
-locations = pd.read_excel('cities_brazil.xlsx')
-
-# %%
-locations['prob'] = locations['population'] / locations['population'].sum()
+locations = pd.read_csv('cities_brazil.csv')
 
 # %%
 import datetime
