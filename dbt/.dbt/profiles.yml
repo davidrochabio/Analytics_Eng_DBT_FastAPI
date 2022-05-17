@@ -1,0 +1,22 @@
+pichau:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      threads: 1
+      host: postgres
+      port: 5432
+      user: postgres
+      pass: postgres
+      dbname: pichau
+      schema: public
+
+    prod:
+      type: postgres
+      threads: 1
+      host: postgres
+      port: 5432
+      user: postgres
+      pass: postgres
+      dbname: pichau
+      schema: dw
