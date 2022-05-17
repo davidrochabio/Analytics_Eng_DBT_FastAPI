@@ -1,10 +1,10 @@
 # Analytics Engineering (Web scraping, PostgreSQL, DBT, FastAPI, Power BI)
 
-![PostgreSQL](screenshots/PostgreSQL Database.jpg)
+![PostgreSQL](screenshots/PostgreSQL_Database.jpg)
 
 ![API](screenshots/FastAPI1.jpg)
 
-![Power BI](screenshots/Power BI star schema.jpg)
+![Power BI](screenshots/PowerBI_star_schema.jpg)
 
 ### - Scrapes products data from brazilian PC webstore -> pichau.com.br
 
