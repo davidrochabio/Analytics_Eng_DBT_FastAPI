@@ -1,0 +1,13 @@
+version: 2
+
+sources:
+  - name: pichau
+    description: 'pichau source data'
+    database: pichau
+    schema: public
+    tables:
+      - name: orders
+      - name: products
+      - name: orders_details
+      - name: locations
+      - name: dates
