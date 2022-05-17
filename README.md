@@ -1,8 +1,10 @@
-# Web_scraping_PostgreSQL_API
+# Analytics Engineering (Web scraping, PostgreSQL, DBT, FastAPI, Power BI)
 
 ![API](screenshots/PostgreSQL_API1.jpg)
 
 ![PGAdmin](screenshots/pgadmin_products.jpg)
+
+
 
 ### - Scrapes products data from brazilian PC webstore -> pichau.com.br
 
@@ -10,7 +12,7 @@
 
 ### - Connects to PGAdmin GUI
 
-### - Uses DBT to transform and load data into dimensions and fact tables
+### - Uses DBT to transform and load data into dimensions and fact tables (star schema)
 
 ### - Create an API (FastAPI)
 
@@ -20,4 +22,5 @@
 
 PS. In order for the pichau_scraping.py script to run and generate the orders data, **you need to download the brazilian cities excel file** at http://blog.mds.gov.br/redesuas/wp-content/uploads/2018/06/Lista-de-Munic%C3%ADpios-com-IBGE-Brasil.xlsx, clean it (remove procv functions), rename it to cities_brazil.xlsx and **put it inside the "dbt/scraping" folder**. You can check the notebook to see how the excel/dataframe is structured as well.
 
-### - just run "docker-compose up -d" in your terminal (inside this folder) -> access PGAdmin in "localhost:5050" and API in "localhost:8000/docs/" 
+### - just run "docker-compose up -d" in your terminal (inside this folder) -> access PGAdmin in "localhost:5050" and API in "localhost:8000/docs/"
+
